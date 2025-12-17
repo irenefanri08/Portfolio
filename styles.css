@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #3e0703 0%, #660b05 100%);
+    min-height: 100vh;
+    padding-top: 120px;
+    display: flex; /* TAMBAHKAN INI */
+    flex-direction: column; /* TAMBAHKAN INI */
+    margin: 0; /* Pastikan no margin */
+}
+
+/* Header Navigation */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 240, 196, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 20px 50px;
+    margin-bottom: 20px;
+    z-index: 1000;
+    border-bottom: 2px solid #8c1007;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    color: #8c1007;
+    font-size: 24px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 700;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    color: #660b05;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 20px;
+    transition: all 0.3s;
+}
+
+nav ul li a:hover {
+    background: rgba(140, 16, 7, 0.1);
+    color: #ae1a10;
+    transform: translateY(-2px);
+}
+
+nav ul li a.active {
+    background: #8c1007;
+    color: #fff0c4;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    background: rgba(255, 240, 196, 0.9);
+    border-top: 2px solid #8c1007;
+    margin-top: auto; /* Push ke bawah */
+    font-size: 14px;
+    color: #660b05;
+}
+footer p {
+    margin: 0;
+    font-weight: 500;
+    color: #660b05;
+}
