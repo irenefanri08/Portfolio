@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Portfolio - Irene Fanri Putri</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                background: linear-gradient(135deg, #660b05 0%, #3e0703 100%);
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+                overflow: hidden;
+            }
+
+            .container {
+                display: flex;
+                gap: 60px;
+                max-width: 1200px;
+                align-items: center;
+                position: relative;
+                z-index: 1;
+            }
+
+            /* Left Section - Portfolio Title */
+            .left-section {
+                flex: 1;
+                position: relative;
+            }
+
+            .portfolio-title {
+                font-size: 120px;
+                font-weight: 700;
+                color: white;
+                line-height: 1;
+                text-transform: lowercase;
+                letter-spacing: -2px;
+                position: relative;
+            }
+
+            .year {
+                color: white;
+                font-size: 24px;
+                font-weight: 300;
+                margin-top: 20px;
+                text-align: center;
+                letter-spacing: 4px;
+            }
+
+            /* Right Section - Resume Card */
+            .resume-card {
+                background: rgba(20, 20, 20, 0.8);
+                border: 1px solid #660b05;
+                border-radius: 20px;
+                padding: 40px;
+                width: 400px;
+                backdrop-filter: blur(10px);
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            }
+
+            .card-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 40px;
+            }
+
+            .card-title {
+                font-size: 32px;
+                font-weight: 700;
+                color: #fff0c4;
+            }
+
+            .add-icon {
+                width: 32px;
+                height: 32px;
+                cursor: pointer;
+                transition: transform 0.3s;
+            }
+
+            .add-icon:hover {
+                transform: scale(1.1);
+            }
+
+            .profile-section {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+
+            .profile-icon {
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                margin: 0 auto 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                box-shadow: 0 4px 16px #fff0c4;
+            }
+
+            .profile-icon img {
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                border: 3px solid white;
+            }
+            .form-group {
+                margin-bottom: 30px;
+            }
+
+            .form-label {
+                display: block;
+                color: #fff0c4;
+                font-size: 11px;
+                font-weight: 600;
+                letter-spacing: 2px;
+                margin-bottom: 12px;
+                text-transform: uppercase;
+            }
+
+            .form-input {
+                width: 100%;
+                background: rgba(15, 45, 45, 0.6);
+                border: 1px solid #fff0c4;
+                border-radius: 12px;
+                padding: 16px 20px;
+                color: white;
+                font-size: 18px;
+                transition: all 0.3s;
+            }
+
+            .form-input:focus {
+                outline: none;
+                border-color: #fff0c4;
+                background: rgba(15, 45, 45, 0.8);
+            }
+
+            /* Typing cursor effect */
+            .form-input.typing::after {
+                content: "|";
+                animation: blink 0.7s infinite;
+                margin-left: 2px;
+            }
+
+            @keyframes blink {
+                0%,
+                50% {
+                    opacity: 1;
+                }
+                51%,
+                100% {
+                    opacity: 0;
+                }
+            }
+
+            .see-more {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 8px;
+                color: #fff0c4;
+                font-size: 14px;
+                font-weight: 500;
+                margin-top: 30px;
+                cursor: pointer;
+                transition: gap 0.3s;
+            }
+
+            .see-more:hover {
+                gap: 12px;
+            }
+
+            .arrow-down {
+                width: 16px;
+                height: 16px;
+                transition: transform 0.3s;
+            }
+
+            .see-more:hover .arrow-down {
+                transform: translateY(4px);
+            }
+
+            /* Responsive */
+            @media (max-width: 968px) {
+                .container {
+                    flex-direction: column;
+                    gap: 40px;
+                }
+
+                .portfolio-title {
+                    font-size: 80px;
+                }
+
+                .curve-svg {
+                    width: 600px;
+                    height: 500px;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .resume-card {
+                    width: 100%;
+                    padding: 30px 20px;
+                }
+
+                .portfolio-title {
+                    font-size: 60px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <!-- Left Section -->
+            <div class="left-section">
+                <h1 class="portfolio-title">Port<br />folio</h1>
+            </div>
+
+            <!-- Right Section -->
+            <div class="resume-card">
+                <div class="card-header">
+                    <h2 class="card-title">Identity Card</h2>
+                    <svg
+                        class="add-icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#FFF0C4"
+                        stroke-width="2"
+                    >
+                        <circle cx="12" cy="12" r="10" />
+                        <path d="M12 8v8M8 12h8" />
+                    </svg>
+                </div>
+
+                <div class="profile-section">
+                    <div class="profile-icon">
+                        <div class="star-group">
+                            <img src="images/photo.jpg" alt="" />
+                        </div>
+                    </div>
+                </div>
+
+                <form id="resumeForm">
+                    <div class="form-group">
+                        <label class="form-label" for="fullName"
+                            >Full Name</label
+                        >
+                        <input
+                            type="text"
+                            id="fullName"
+                            class="form-input"
+                            value=""
+                            readonly
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="jobTitle"
+                            >Job Title</label
+                        >
+                        <input
+                            type="text"
+                            id="jobTitle"
+                            class="form-input"
+                            value=""
+                            readonly
+                        />
+                    </div>
+                </form>
+
+                <div class="see-more" id="seeMore">
+                    <span>See more</span>
+                    <svg
+                        class="arrow-down"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#FFF0C4"
+                        stroke-width="2"
+                    >
+                        <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Typing effect function
+            function typeWriter(element, text, speed = 100) {
+                let i = 0;
+                element.value = "";
+
+                function type() {
+                    if (i < text.length) {
+                        element.value += text.charAt(i);
+                        i++;
+                        setTimeout(type, speed);
+                    }
+                }
+
+                type();
+            }
+
+            // Start typing animation on page load
+            window.addEventListener("load", function () {
+                const fullNameInput = document.getElementById("fullName");
+                const jobTitleInput = document.getElementById("jobTitle");
+
+                // Fade in card first
+                document.querySelector(".resume-card").style.opacity = "0";
+                document.querySelector(".resume-card").style.transform =
+                    "translateY(20px)";
+
+                setTimeout(() => {
+                    document.querySelector(".resume-card").style.transition =
+                        "all 0.6s ease";
+                    document.querySelector(".resume-card").style.opacity = "1";
+                    document.querySelector(".resume-card").style.transform =
+                        "translateY(0)";
+
+                    // Start typing after card appears
+                    setTimeout(() => {
+                        typeWriter(
+                            fullNameInput,
+                            "Irene Fanri Putri 黃愛玲",
+                            80
+                        );
+
+                        // Start job title typing after name is done
+                        setTimeout(() => {
+                            typeWriter(jobTitleInput, "College Student", 80);
+                        }, 1200);
+                    }, 600);
+                }, 300);
+            });
+
+            // Add click event to "See more" button
+            document
+                .getElementById("seeMore")
+                .addEventListener("click", function () {
+                    globalThis.location.href = "about.html";
+                });
+
+            // Add icon click event to enable editing
+            document
+                .querySelector(".add-icon")
+                .addEventListener("click", function () {
+                    const inputs = document.querySelectorAll(".form-input");
+                    inputs.forEach((input) => {
+                        input.removeAttribute("readonly");
+                        input.style.background = "rgba(15, 45, 45, 0.8)";
+                    });
+                });
+        </script>
+    </body>
+</html>

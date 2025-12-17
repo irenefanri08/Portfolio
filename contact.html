@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Contact - Irene's Portfolio</title>
+        <link rel="stylesheet" href="styles.css" />
+        <style>
+            main {
+                flex: 1;
+                padding: 40px;
+                text-align: center;
+            }
+
+            h2 {
+                color: #fff0c4;
+                font-size: 42px;
+                font-weight: 700;
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            h3 {
+                color: #8c1007;
+                font-size: 28px;
+                font-weight: 700;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            p {
+                color: #fff0c4;
+                font-size: 18px;
+                margin-bottom: 30px;
+            }
+
+            .contact-info,
+            .message-form {
+                background-color: #ffebcd;
+                padding: 20px;
+                border-radius: 10px;
+                margin: 20px auto; /* center horizontally */
+                color: black;
+                max-width: 1000px; /* limit width */
+                text-align: justify; /* justify text */
+            }
+
+            .contact-info a {
+                display: block;
+                color: black;
+                font-weight: normal; /* only <strong> bold */
+                text-decoration: none;
+                margin: 8px 0;
+            }
+
+            .contact-info a:hover {
+                color: gray;
+                text-decoration: underline;
+            }
+
+            .message-form .form-group {
+                margin-bottom: 15px;
+                text-align: justify;
+            }
+
+            .message-form label {
+                display: block;
+                font-weight: bold;
+                margin-bottom: 5px;
+            }
+
+            .message-form input,
+            .message-form textarea {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                font-size: 1rem;
+                box-sizing: border-box;
+            }
+
+            .message-form textarea {
+                height: 120px;
+                resize: vertical;
+            }
+
+            .btn {
+                display: inline-block;
+                padding: 10px 20px;
+                font-size: 1rem;
+                color: #fff;
+                background: #8c1007;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                text-decoration: none;
+                text-align: center;
+            }
+
+            .btn:hover {
+                background: #ae1a10;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <h1>Welcome to My Portfolio Website</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h2>Get in Touch</h2>
+            <p>
+                I'd love to connect! Feel free to reach out through the
+                platforms below:
+            </p>
+
+            <div class="contact-info">
+                <a href="mailto:11311423@gms.tcu.edu.tw"
+                    ><strong>Email:</strong> 11311423@gms.tcu.edu.tw</a
+                >
+                <a href="https://web.whatsapp.com/"
+                    ><strong>Phone:</strong> +886 983 538 642</a
+                >
+                <a href="https://maps.app.goo.gl/Q1hon3zvMGQ7psYx9"
+                    ><strong>Location:</strong> 970 花蓮縣花蓮市接仁街 67 號</a
+                >
+                <a
+                    href="https://www.linkedin.com/in/irene-fanri-putri-bb1282226/"
+                    target="_blank"
+                    ><strong>LinkedIn:</strong> Irene Fanri Putri</a
+                >
+                <a href="https://www.instagram.com/irenefanri/" target="_blank"
+                    ><strong>Instagram:</strong> @irenefanri</a
+                >
+            </div>
+
+            <div class="message-form">
+                <h3>Send Me a Message</h3>
+                <form action="https://example.com/submit" method="post">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input
+                            type="text"
+                            id="subject"
+                            name="subject"
+                            required
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            required
+                        ></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Irene | Built with 💙 using HTML & CSS</p>
+        </footer>
+    </body>
+</html>

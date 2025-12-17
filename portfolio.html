@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Portfolio - Irene's Portfolio</title>
+        <link rel="stylesheet" href="styles.css" />
+        <style>
+            /* Main Content */
+            main {
+                padding: 50px 10px 0px;
+                max-width: 1000px;
+                margin: 0 auto;
+            }
+
+            .page-title {
+                color: #fff0c4;
+                font-size: 42px;
+                font-weight: 700;
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .page-subtitle {
+                color: rgba(255, 240, 196, 0.8);
+                font-size: 18px;
+                text-align: center;
+                margin-bottom: 50px;
+            }
+
+            /* Portfolio Section */
+            .portfolio-section {
+                background: rgba(255, 240, 196, 0.98);
+                border-radius: 15px;
+                padding: 40px;
+                margin-bottom: 30px;
+                box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+                border-left: 6px solid #8c1007;
+                transition: all 0.3s;
+            }
+
+            .portfolio-section:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 35px rgba(140, 16, 7, 0.4);
+            }
+
+            .section-title {
+                color: #8c1007;
+                font-size: 26px;
+                font-weight: 700;
+                margin-bottom: 25px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .section-icon {
+                font-size: 28px;
+            }
+
+            .portfolio-section p {
+                color: #3e0703;
+                font-size: 15px;
+                line-height: 1.6;
+                margin-bottom: 20px;
+            }
+
+            /* Publications List */
+            .publications-list {
+                list-style: none;
+                padding: 0;
+            }
+
+            .publication-item {
+                background: rgba(140, 16, 7, 0.05);
+                padding: 20px;
+                border-radius: 10px;
+                margin-bottom: 20px;
+                border-left: 4px solid #8c1007;
+                transition: all 0.3s;
+            }
+
+            .publication-item:hover {
+                background: rgba(140, 16, 7, 0.1);
+                transform: translateX(5px);
+            }
+
+            .publication-item a {
+                color: #8c1007;
+                font-weight: 700;
+                font-size: 16px;
+                text-decoration: none;
+                line-height: 1.5;
+                transition: all 0.3s;
+            }
+
+            .publication-item a:hover {
+                color: #660b05;
+                text-decoration: underline;
+            }
+
+            .publication-journal {
+                color: #660b05;
+                font-style: italic;
+                font-size: 14px;
+                margin-top: 8px;
+                display: block;
+            }
+
+            /* CV Table */
+            .cv-table {
+                width: 100%;
+                border-collapse: separate;
+                border-spacing: 0;
+                margin-top: 20px;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .cv-table td {
+                padding: 20px;
+                border: 2px solid #8c1007;
+                background: rgba(140, 16, 7, 0.05);
+            }
+
+            .cv-table td:first-child {
+                font-weight: 700;
+                color: #8c1007;
+                width: 30%;
+                font-size: 16px;
+            }
+
+            .cv-table td:last-child {
+                text-align: center;
+            }
+
+            /* CV Link Button */
+            .cv-link {
+                display: inline-block;
+                background: linear-gradient(135deg, #8c1007 0%, #660b05 100%);
+                color: #fff0c4;
+                padding: 12px 30px;
+                border-radius: 25px;
+                text-decoration: none;
+                font-weight: 700;
+                font-size: 15px;
+                transition: all 0.3s;
+                box-shadow: 0 4px 15px rgba(140, 16, 7, 0.3);
+            }
+
+            .cv-link:hover {
+                background: linear-gradient(135deg, #660b05 0%, #3e0703 100%);
+                transform: translateY(-3px);
+                box-shadow: 0 6px 20px rgba(140, 16, 7, 0.5);
+            }
+
+            /* Responsive */
+            @media (max-width: 768px) {
+                main {
+                    padding: 120px 20px 40px;
+                }
+
+                header {
+                    padding: 15px 20px;
+                }
+
+                header h1 {
+                    font-size: 20px;
+                }
+
+                .page-title {
+                    font-size: 32px;
+                }
+
+                .portfolio-section {
+                    padding: 25px;
+                }
+
+                .section-title {
+                    font-size: 22px;
+                }
+
+                .cv-table td {
+                    padding: 15px;
+                    display: block;
+                    width: 100% !important;
+                    border: 1px solid #8c1007;
+                }
+
+                .cv-table td:first-child {
+                    border-bottom: none;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Welcome to My Portfolio Website</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li>
+                        <a href="portfolio.html" class="active">Portfolio</a>
+                    </li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h2 class="page-title">My Portfolio</h2>
+            <p class="page-subtitle">
+                Here are some of my academic works and publications
+            </p>
+
+            <section class="portfolio-section">
+                <h3 class="section-title">
+                    <span class="section-icon">📰</span>
+                    Publications
+                </h3>
+                <ul class="publications-list">
+                    <li class="publication-item">
+                        <a
+                            href="https://idm.or.id/JSER/index.php/JSER/article/view/228"
+                            target="_blank"
+                        >
+                            Exploring Psychological Well-being Among University
+                            Students: A Case Study
+                        </a>
+                        <span class="publication-journal">
+                            Journal of Social Education Research (JSER)
+                        </span>
+                    </li>
+                    <li class="publication-item">
+                        <a
+                            href="https://jonedu.org/index.php/joe/article/view/3798"
+                            target="_blank"
+                        >
+                            The Role of Emotional Intelligence in Student
+                            Engagement
+                        </a>
+                        <span class="publication-journal">
+                            Journal of Education (JONEDU)
+                        </span>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="portfolio-section">
+                <h3 class="section-title">
+                    <span class="section-icon">📄</span>
+                    Curriculum Vitae
+                </h3>
+                <p>You can view or download my CV using the link below:</p>
+                <table class="cv-table">
+                    <tr>
+                        <td>Download CV</td>
+                        <td>
+                            <a
+                                href="https://drive.google.com/file/d/1A5HWletm-_dBT4E3tkwehPtYRq6hxyXQ/view?usp=sharing"
+                                target="_blank"
+                                class="cv-link"
+                            >
+                                📥 View Full CV
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Irene | Built with 💙 using HTML & CSS</p>
+        </footer>
+    </body>
+</html>

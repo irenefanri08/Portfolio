@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Album - Irene's Portfolio</title>
+        <link rel="stylesheet" href="styles.css" />
+        <style>
+            main {
+                padding: 30px;
+            }
+
+            h2 {
+                color: #fff0c4;
+                font-size: 42px;
+                font-weight: 700;
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            .albums {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
+            }
+
+            .album-cover {
+                width: 200px;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 10px;
+                border: 3px solid tomato;
+                cursor: pointer;
+                transition: transform 0.3s;
+            }
+
+            .album-cover:hover {
+                transform: scale(1.05);
+            }
+
+            /* ===== MODAL ===== */
+            .modal {
+                display: none;
+                position: fixed;
+                z-index: 10;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(0, 0, 0, 0.8);
+                padding-top: 50px;
+            }
+
+            .modal-content {
+                background-color: #fff;
+                margin: auto;
+                padding: 20px;
+                max-width: 90%;
+                border-radius: 10px;
+            }
+
+            .modal-content h3 {
+                color: tomato;
+                margin-top: 0;
+            }
+
+            .modal-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 15px;
+                margin-top: 15px;
+            }
+
+            .modal-grid img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+
+            .close-btn {
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+                color: #333;
+                cursor: pointer;
+            }
+
+            .close-btn:hover {
+                color: red;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <h1>Welcome to My Portfolio Website</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="gallery.html" class="active">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h2>Albums</h2>
+            <div class="albums">
+                <!-- Album Covers Only -->
+                <img
+                    src="images/ikonme.jpg"
+                    alt="Me Album"
+                    class="album-cover"
+                    onclick="openModal('meModal')"
+                />
+                <img
+                    src="images/ikonfamily.jpg"
+                    alt="Family Album"
+                    class="album-cover"
+                    onclick="openModal('familyModal')"
+                />
+                <img
+                    src="images/ikonactivity.jpg"
+                    alt="Activities Album"
+                    class="album-cover"
+                    onclick="openModal('activitiesModal')"
+                />
+                <img
+                    src="images/ikonfriend.jpg"
+                    alt="Friends Album"
+                    class="album-cover"
+                    onclick="openModal('friendsModal')"
+                />
+            </div>
+
+            <!-- ===== MODALS ===== -->
+            <!-- Me Album Modal -->
+            <div id="meModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn" onclick="closeModal('meModal')"
+                        >&times;</span
+                    >
+                    <h3>Me</h3>
+                    <div class="modal-grid">
+                        <img src="images/me1.jpg" alt="Me 1" />
+                        <img src="images/me2.jpg" alt="Me 2" />
+                        <img src="images/me3.jpg" alt="Me 3" />
+                        <img src="images/me7.jpg" alt="Me 7" />
+                        <img src="images/me9.jpg" alt="Me 9" />
+                        <img src="images/me11.jpg" alt="Me 11" />
+                        <img src="images/me12.jpg" alt="Me 12" />
+                        <img src="images/me13.jpg" alt="Me 13" />
+                        <img src="images/me16.jpg" alt="Me 14" />
+                        <img src="images/me15.jpg" alt="Me 15" />
+                        <img src="images/me14.jpg" alt="Me 16" />
+                        <img src="images/me17.jpg" alt="Me 17" />
+                        <img src="images/me18.jpg" alt="Me 18" />
+                        <img src="images/me19.jpg" alt="Me 19" />
+                        <img src="images/me20.jpg" alt="Me 20" />
+                        <img src="images/me21.jpg" alt="Me 21" />
+                        <img src="images/me22.jpg" alt="Me 22" />
+                        <img src="images/me23.jpg" alt="Me 23" />
+                        <img src="images/me24.jpg" alt="Me 24" />
+                        <img src="images/me25.jpg" alt="Me 25" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Family Album Modal -->
+            <div id="familyModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn" onclick="closeModal('familyModal')"
+                        >&times;</span
+                    >
+                    <h3>Family</h3>
+                    <div class="modal-grid">
+                        <img src="images/family1.jpg" alt="Family 1" />
+                        <img src="images/family2.jpg" alt="Family 2" />
+                        <img src="images/family3.jpg" alt="Family 3" />
+                        <img src="images/family4.jpg" alt="Family 4" />
+                        <img src="images/family5.jpg" alt="Family 5" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Activities Album Modal -->
+            <div id="activitiesModal" class="modal">
+                <div class="modal-content">
+                    <span
+                        class="close-btn"
+                        onclick="closeModal('activitiesModal')"
+                        >&times;</span
+                    >
+                    <h3>Activities</h3>
+                    <div class="modal-grid">
+                        <img src="images/activity1.jpg" alt="Activity 1" />
+                        <img src="images/activity2.jpg" alt="Activity 2" />
+                        <img src="images/activity3.jpg" alt="Activity 3" />
+                        <img src="images/activity4.jpg" alt="Activity 4" />
+                        <img src="images/activity5.jpg" alt="Activity 5" />
+                        <img src="images/activity6.jpg" alt="Activity 6" />
+                        <img src="images/activity7.jpg" alt="Activity 7" />
+                        <img src="images/activity8.jpg" alt="Activity 8" />
+                        <img src="images/activity9.jpg" alt="Activity 9" />
+                        <img src="images/activity10.jpg" alt="Activity 10" />
+                        <img src="images/activity11.jpg" alt="Activity 11" />
+                        <img src="images/activity12.jpg" alt="Activity 12" />
+                        <img src="images/activity13.jpg" alt="Activity 13" />
+                        <img src="images/activity14.jpg" alt="Activity 14" />
+                        <img src="images/activity15.jpg" alt="Activity 15" />
+                        <img src="images/activity16.jpg" alt="Activity 16" />
+                        <img src="images/activity17.jpg" alt="Activity 17" />
+                        <img src="images/activity18.jpg" alt="Activity 18" />
+                        <img src="images/activity19.jpg" alt="Activity 19" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Friends Album Modal -->
+            <div id="friendsModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn" onclick="closeModal('friendsModal')"
+                        >&times;</span
+                    >
+                    <h3>Friends</h3>
+                    <div class="modal-grid">
+                        <img src="images/friend1.jpg" alt="Friends 1" />
+                        <img src="images/friend2.jpg" alt="Friends 2" />
+                        <img src="images/friend3.jpg" alt="Friends 3" />
+                        <img src="images/friend4.jpg" alt="Friends 4" />
+                        <img src="images/friend5.jpg" alt="Friends 5" />
+                        <img src="images/friend6.jpg" alt="Friends 6" />
+                        <img src="images/friend7.jpg" alt="Friends 7" />
+                        <img src="images/friend8.jpg" alt="Friends 8" />
+                        <img src="images/friend9.jpg" alt="Friends 9" />
+                        <img src="images/friend10.jpg" alt="Friends 10" />
+                        <img src="images/friend11.jpg" alt="Friends 11" />
+                        <img src="images/friend12.jpg" alt="Friends 12" />
+                        <img src="images/friend13.jpg" alt="Friends 13" />
+                        <img src="images/friend14.jpg" alt="Friends 14" />
+                        <img src="images/friend15.jpg" alt="Friends 15" />
+                        <img src="images/friend16.jpg" alt="Friends 16" />
+                        <img src="images/friend17.jpg" alt="Friends 17" />
+                        <img src="images/friend18.jpg" alt="Friends 18" />
+                        <img src="images/friend19.jpg" alt="Friends 19" />
+                        <img src="images/friend20.jpg" alt="Friends 20" />
+                        <img src="images/friend21.jpg" alt="Friends 21" />
+                        <img src="images/friend22.jpg" alt="Friends 22" />
+                        <img src="images/friend23.jpg" alt="Friends 23" />
+                        <img src="images/friend24.jpg" alt="Friends 24" />
+                        <img src="images/friend25.jpg" alt="Friends 25" />
+                        <img src="images/friend26.jpg" alt="Friends 26" />
+                        <img src="images/friend27.jpg" alt="Friends 27" />
+                        <img src="images/friend28.jpeg" alt="Friends 28" />
+                        <img src="images/friend29.jpg" alt="Friends 29" />
+                        <img src="images/friend30.jpg" alt="Friends 30" />
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Irene | Built with 💙 using HTML & CSS</p>
+        </footer>
+
+        <script>
+            function openModal(modalId) {
+                document.getElementById(modalId).style.display = "block";
+            }
+
+            function closeModal(modalId) {
+                document.getElementById(modalId).style.display = "none";
+            }
+
+            // Close modal if clicked outside content
+            window.onclick = function (event) {
+                const modals = document.querySelectorAll(".modal");
+                modals.forEach((modal) => {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                });
+            };
+        </script>
+    </body>
+</html>
