@@ -226,6 +226,128 @@
                 text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
             }
 
+            .modal {
+                display: none;
+                position: fixed;
+                z-index: 1000;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(0, 0, 0, 0.85);
+                padding: 40px 20px;
+                animation: fadeIn 0.3s ease;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
+            }
+
+            .modal-content {
+                background-color: #fff0c4;
+                margin: auto;
+                padding: 30px;
+                max-width: 800px;
+                border-radius: 15px;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+                animation: slideDown 0.4s ease;
+                border: 3px solid #8c1007;
+            }
+
+            @keyframes slideDown {
+                from {
+                    transform: translateY(-50px);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+
+            .modal-content h3 {
+                color: #8c1007;
+                margin-top: 0;
+                margin-bottom: 25px;
+                font-size: 28px;
+                font-weight: 700;
+                border-bottom: 3px solid #8c1007;
+                padding-bottom: 15px;
+            }
+
+            .modal-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .modal-grid .cert-list {
+                margin: 0;
+            }
+
+            .modal-grid .cert-item {
+                background: rgba(255, 255, 255, 0.7);
+                margin-bottom: 12px;
+                display: block;
+                flex-direction: column;
+            }
+
+            .modal-grid .cert-item .cert-content {
+                display: block;
+                width: 100%;
+            }
+
+            .modal-grid .cert-item .cert-name {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .modal-grid .cert-item .cert-year {
+                display: block;
+                margin-top: 10px;
+                font-size: 12px;
+            }
+
+            .modal-grid .cert-item .skill-item {
+                margin-top: 10px;
+                width: 100%;
+            }
+
+            .modal-grid .cert-item .skill-item ul {
+                margin: 10px 0 0 0;
+                padding-left: 20px;
+                list-style: disc;
+            }
+
+            .modal-grid .cert-item .skill-item li {
+                color: #660b05;
+                font-size: 13px;
+                line-height: 1.6;
+                margin-bottom: 5px;
+            }
+
+            .close-btn {
+                float: right;
+                font-size: 32px;
+                font-weight: bold;
+                color: #8c1007;
+                cursor: pointer;
+                line-height: 20px;
+                transition: all 0.3s;
+                margin-top: -10px;
+            }
+
+            .close-btn:hover {
+                color: #660b05;
+                transform: rotate(90deg);
+            }
+
             /* Tags */
             .tags-container {
                 display: flex;
@@ -546,7 +668,11 @@
                 </div>
 
                 <div class="skills-grid">
-                    <div class="skill-card" data-skill="photoshop">
+                    <div
+                        class="skill-card"
+                        data-skill="photoshop"
+                        onclick="openModal('spssModal')"
+                    >
                         <div class="skill-icon">
                             <svg viewBox="0 0 100 80">
                                 <rect
@@ -571,7 +697,11 @@
                         <p class="skill-label">SPSS</p>
                     </div>
 
-                    <div class="skill-card" data-skill="illustrator">
+                    <div
+                        class="skill-card"
+                        data-skill="illustrator"
+                        onclick="openModal('msModal')"
+                    >
                         <div class="skill-icon">
                             <svg viewBox="0 0 100 80">
                                 <rect
@@ -596,7 +726,11 @@
                         <p class="skill-label">Microsoft Office</p>
                     </div>
 
-                    <div class="skill-card" data-skill="indesign">
+                    <div
+                        class="skill-card"
+                        data-skill="indesign"
+                        onclick="openModal('psyModal')"
+                    >
                         <div class="skill-icon">
                             <svg viewBox="0 0 100 80">
                                 <rect
@@ -621,7 +755,11 @@
                         <p class="skill-label">Psychology Test</p>
                     </div>
 
-                    <div class="skill-card" data-skill="canva">
+                    <div
+                        class="skill-card"
+                        data-skill="canva"
+                        onclick="openModal('cvModal')"
+                    >
                         <div class="skill-icon">
                             <svg viewBox="0 0 100 80">
                                 <rect
@@ -648,14 +786,9 @@
                 </div>
 
                 <div class="tags-container">
-                    <span class="tag">IST Psychology</span>
-                    <span class="tag">CFIT Psychology</span>
-                    <span class="tag">APM Psychology</span>
-                    <span class="tag">EPPS Psychology</span>
-                    <span class="tag">Pauli Psychology</span>
-                    <span class="tag">Kraeplin Psychology</span>
-                    <span class="tag">16 PF Psychology</span>
-                    <span class="tag">Papikostik Psychology</span>
+                    <span class="tag">Indonesia</span>
+                    <span class="tag">English</span>
+                    <span class="tag">Chinese</span>
                 </div>
             </div>
 
@@ -667,6 +800,56 @@
                 </div>
 
                 <ul class="cert-list">
+                    <li class="cert-item">
+                        <div class="cert-content">
+                            <svg
+                                class="cert-icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="#8c1007"
+                                stroke-width="2"
+                            >
+                                <rect
+                                    x="3"
+                                    y="3"
+                                    width="18"
+                                    height="18"
+                                    rx="2"
+                                />
+                                <path d="M9 11l3 3 5-5" />
+                            </svg>
+                            <span class="cert-name"
+                                >Achieved the A2 Score for TOCFL Listening &
+                                Reading</span
+                            >
+                        </div>
+                        <span class="cert-year">2025</span>
+                    </li>
+                    <li class="cert-item">
+                        <div class="cert-content">
+                            <svg
+                                class="cert-icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="#8c1007"
+                                stroke-width="2"
+                            >
+                                <rect
+                                    x="3"
+                                    y="3"
+                                    width="18"
+                                    height="18"
+                                    rx="2"
+                                />
+                                <path d="M9 11l3 3 5-5" />
+                            </svg>
+                            <span class="cert-name"
+                                >Achieved the B2 Score for TOIEC Listening &
+                                Reading</span
+                            >
+                        </div>
+                        <span class="cert-year">2024</span>
+                    </li>
                     <li class="cert-item">
                         <div class="cert-content">
                             <svg
@@ -769,47 +952,245 @@
             </div>
         </div>
 
+        <!-- Modal -->
+        <div id="spssModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('spssModal')"
+                    >&times;</span
+                >
+                <h3>SPSS</h3>
+                <div class="modal-grid">
+                    <ul class="cert-list">
+                        <li class="cert-item">
+                            <div class="cert-content">
+                                <span class="cert-name"
+                                    >Input and Clean Research Data</span
+                                >
+                            </div>
+                        </li>
+                        <li class="cert-item">
+                            <div class="cert-content">
+                                <span class="cert-name"
+                                    >Run descriptive statistics</span
+                                >
+                            </div>
+                            <span class="cert-year">Mean, Median, SD</span>
+                        </li>
+                        <li class="cert-item">
+                            <div class="cert-content">
+                                <span class="cert-name"
+                                    >Test Scale Reliability</span
+                                >
+                            </div>
+                            <span class="cert-year">Cronbach's Alpha</span>
+                        </li>
+                        <li class="cert-item">
+                            <div class="cert-content">
+                                <span class="cert-name"
+                                    >Conduct Basic Inferential Statistics</span
+                                >
+                            </div>
+                            <span class="cert-year"
+                                >Independent t-test, Pearson Correlation, Simple
+                                Linear Regression</span
+                            >
+                        </li>
+                        <li class="cert-item">
+                            <div class="cert-content">
+                                <span class="cert-name"
+                                    >Interpret Output Result</span
+                                >
+                            </div>
+                        </li>
+                        <li class="cert-item">
+                            <div class="cert-content">
+                                <span class="cert-name"
+                                    >Write Statistical Result for Reports</span
+                                >
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="msModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('msModal')"
+                    >&times;</span
+                >
+                <h3>Microsoft</h3>
+                <div class="modal-grid">
+                    <ul class="cert-list">
+                        <li class="cert-item">
+                            <div class="cert-content">
+                                <span class="cert-name">Microsoft Word</span>
+                                <div class="skill-item">
+                                    <ul>
+                                        <li>
+                                            Write Academic Reports and Paper
+                                        </li>
+                                        <li>
+                                            Format Document (Headings, Tables,
+                                            Reference)
+                                        </li>
+                                        <li>Apply APA-Style Formatting</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="cert-item">
+                            <div class="cert-content">
+                                <span class="cert-name">Microsoft Excel</span>
+                                <div class="skill-item">
+                                    <ul>
+                                        <li>Data Entry and Data Cleaning</li>
+                                        <li>
+                                            Use Formulas (SUM, IF , VLOOKUP)
+                                        </li>
+                                        <li>
+                                            Create charts and summary tables
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="cert-item">
+                            <div class="cert-content">
+                                <span class="cert-name"
+                                    >Microsoft PowerPoint</span
+                                >
+                                <div class="skill-item">
+                                    <ul>
+                                        <li>Design presentation slide</li>
+                                        <li>
+                                            Structure Academic and Professional
+                                            Presentations
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="psyModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('psyModal')"
+                    >&times;</span
+                >
+                <h3>Psychology Skill</h3>
+                <div class="modal-grid">
+                    <ul class="cert-list">
+                        <li class="cert-item">
+                            <div class="cert-content">
+                                <span class="cert-name"
+                                    >Psychological Testing</span
+                                >
+                                <div class="skill-item">
+                                    <ul>
+                                        <li>
+                                            Administer Psychological Tests
+                                            (basic level)
+                                        </li>
+                                        <li>
+                                            Score test results manually and
+                                            digitally
+                                        </li>
+                                        <li>
+                                            Convert raw scores into standard
+                                            scores
+                                        </li>
+                                        <li>
+                                            Interpret results for Academic
+                                            reports
+                                        </li>
+                                        <li>
+                                            Write psychological test summaries
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="cert-item">
+                            <div class="cert-content">
+                                <span class="cert-name">Test Instruments</span>
+                                <div class="skill-item">
+                                    <ul>
+                                        <li>IST</li>
+                                        <li>CFIT</li>
+                                        <li>APM</li>
+                                        <li>EPPS</li>
+                                        <li>Pauli</li>
+                                        <li>Kraeplin</li>
+                                        <li>16 Personality Factors</li>
+                                        <li>Papikostik</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="cvModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('cvModal')"
+                    >&times;</span
+                >
+                <h3>Canva Skill</h3>
+                <div class="modal-grid">
+                    <ul class="cert-list">
+                        <li class="cert-item">
+                            <div class="cert-content">
+                                <span class="cert-name"
+                                    >Design Presentations Slides</span
+                                >
+                            </div>
+                        </li>
+                        <li class="cert-item">
+                            <div class="cert-content">
+                                <span class="cert-name"
+                                    >Create posters and Flyers</span
+                                >
+                            </div>
+                        </li>
+                        <li class="cert-item">
+                            <div class="cert-content">
+                                <span class="cert-name"
+                                    >Design Social Media Contents</span
+                                >
+                            </div>
+                        </li>
+                        <li class="cert-item">
+                            <div class="cert-content">
+                                <span class="cert-name"
+                                    >Create Simple Infographics</span
+                                >
+                            </div>
+                        </li>
+                        <li class="cert-item">
+                            <div class="cert-content">
+                                <span class="cert-name"
+                                    >Design CVs and Portfolio Layout</span
+                                >
+                            </div>
+                        </li>
+                        <li class="cert-item">
+                            <div class="cert-content">
+                                <span class="cert-name"
+                                    >Apply Consistent Color and Layout
+                                    Styles</span
+                                >
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
         <script>
-            // Skill card interactions
-            const skillCards = document.querySelectorAll(".skill-card");
-            skillCards.forEach((card) => {
-                card.addEventListener("click", function () {
-                    const skill = this.dataset.skill;
-                    console.log("Selected skill:", skill);
-
-                    // Visual feedback
-                    skillCards.forEach((c) => (c.style.opacity = "0.5"));
-                    this.style.opacity = "1";
-
-                    setTimeout(() => {
-                        skillCards.forEach((c) => (c.style.opacity = "1"));
-                    }, 1000);
-                });
-            });
-
-            // Tag interactions
-            const tags = document.querySelectorAll(".tag");
-            tags.forEach((tag) => {
-                tag.addEventListener("click", function () {
-                    this.style.background = "rgba(140, 16, 7, 0.5)";
-                    setTimeout(() => {
-                        this.style.background = "rgba(140, 16, 7, 0.15)";
-                    }, 300);
-                });
-            });
-
-            // Timeline item hover effect
-            const timelineItems =
-                document.querySelectorAll(".timeline-content");
-            timelineItems.forEach((item) => {
-                item.addEventListener("mouseenter", function () {
-                    this.style.borderLeft = "4px solid #8c1007";
-                });
-
-                item.addEventListener("mouseleave", function () {
-                    this.style.borderLeft = "3px solid transparent";
-                });
-            });
+            // Time
 
             // Add scroll reveal animation
             const observerOptions = {
@@ -833,6 +1214,24 @@
                 section.style.transition = "all 0.8s ease";
                 observer.observe(section);
             });
+
+            function openModal(modalId) {
+                document.getElementById(modalId).style.display = "block";
+            }
+
+            function closeModal(modalId) {
+                document.getElementById(modalId).style.display = "none";
+            }
+
+            // Close modal if clicked outside content
+            globalThis.onclick = function (event) {
+                const modals = document.querySelectorAll(".modal");
+                modals.forEach((modal) => {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                });
+            };
         </script>
     </body>
 </html>
