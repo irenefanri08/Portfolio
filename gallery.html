@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="styles.css" />
         <style>
             main {
-                padding: 30px;
+                padding: 50px;
             }
 
             h2 {
@@ -43,22 +43,35 @@
             .modal {
                 display: none;
                 position: fixed;
-                z-index: 10;
+                z-index: 1000;
                 left: 0;
                 top: 0;
                 width: 100%;
                 height: 100%;
                 overflow: auto;
-                background-color: rgba(0, 0, 0, 0.8);
-                padding-top: 50px;
+                background-color: rgba(0, 0, 0, 0.85);
+                padding: 40px 20px;
+                animation: fadeIn 0.3s ease;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+                to {
+                    opacity: 1;
+                }
             }
 
             .modal-content {
-                background-color: #fff;
+                background-color: #fff0c4;
                 margin: auto;
-                padding: 20px;
-                max-width: 90%;
-                border-radius: 10px;
+                padding: 30px;
+                max-width: 1000px;
+                border-radius: 15px;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+                animation: slideDown 0.4s ease;
+                border: 3px solid #8c1007;
             }
 
             .modal-content h3 {
